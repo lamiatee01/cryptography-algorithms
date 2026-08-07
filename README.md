@@ -1,6 +1,6 @@
 # 🔐 Crypto Educational Suite — Ing3 Cybersécurité
 
-> Application pédagogique interactive couvrant les **TP1 à TP5** de cryptographie appliquée.  
+> Application pédagogique interactive couvrant les **TP1 à TP6** de cryptographie appliquée.  
 > Interface graphique **Cyberpunk Neon** (CustomTkinter) avec logs détaillés étape par étape.
 
 ---
@@ -8,52 +8,57 @@
 ## 📹 Démonstration vidéo
 
 🎬 **Lien Google Drive :** `[https://drive.google.com/file/d/13t7UUiBDCWHKYrtKSJapcSPKEWQzIWZC/view?usp=sharing]`.
+** `[https://drive.google.com/file/d/1ZpQYCGmsX41t36749Pz9NU1cpBlDoQYQ/view?usp=drive_link]`.
 
 ---
 
 ## 📁 Structure du projet
 
+
 ```
 CRYPTO_EDUCATIONAL_APP/
 │
-├── main.py                          # Point d'entrée — Interface graphique principale
+├── main.py # Point d'entrée — Interface graphique principale
+├── secure_chat.py # TP6 — Communications sécurisées (SSL/BT/UDP/Vote)
 │
-└── algorithms/
-    │
-    ├── __init__.py                  # Export de tous les algorithmes
-    │
-    ├── ── TP1 : Chiffrement Classique ──
-    ├── caesar.py                    # César : force brute + IC
-    ├── vigenere.py                  # Vigenère : Kasiski + analyse IC
-    ├── affine.py                    # Affine : E(x) = (ax+b) mod 26
-    ├── hill.py                      # Hill 2×2 / 3×3 + attaque clair connu
-    ├── playfair.py                  # Playfair : grille 5×5
-    ├── Otp.py                       # OTP Vernam : XOR + crib dragging
-    │
-    ├── ── TP2 : Cryptographie Symétrique ──
-    ├── rc4.py                       # RC4 : KSA + PRGA + vulnérabilité WEP
-    ├── des.py                       # DES-ECB/CBC + 3DES + benchmark
-    ├── aes.py                       # AES-128/192/256 : ECB/CBC/CTR + avalanche
-    ├── twofish.py                   # Twofish (finaliste NIST — 2e)
-    ├── serpent.py                   # Serpent (finaliste NIST — 4e)
-    ├── rc6.py                       # RC6 (finaliste NIST)
-    ├── mars.py                      # MARS (finaliste NIST — IBM)
-    │
-    ├── ── TP3 : Cryptographie Asymétrique ──
-    ├── rsa.py                       # RSA-512/1024/2048 + OAEP + hybride AES
-    ├── Dh.py                        # Diffie-Hellman + MITM + contre-mesure ECDSA
-    ├── ecc.py                       # ECC y²=x³+7 + ECDH P-256 + ECIES
-    ├── elgamal.py                   # ElGamal + non-déterminisme + malléabilité
-    │
-    ├── ── TP4 : Fonctions de Hachage ──
-    ├── md5.py                       # MD5 : avalanche + biais
-    ├── sha256.py                    # SHA-256 from scratch + validation hashlib
-    ├── sha512.py                    # SHA-512 + benchmark MD5/SHA2/SHA3
-    │
-    └── ── TP5 : Signatures Numériques ──
-        ├── rsa_signature.py         # RSA-PSS / PKCS#1 v1.5 + attaques
-        ├── elgamal_signature.py     # Signature ElGamal + attaque nonce
-        └── dsa_ecdsa.py             # DSA + ECDSA + Ed25519 + attaque nonce réutilisé
+├── algorithms/
+│ ├── init.py # Export de tous les algorithmes
+│ │
+│ ├── ── TP1 : Chiffrement Classique ──
+│ ├── caesar.py # César : force brute + IC
+│ ├── vigenere.py # Vigenère : Kasiski + analyse IC
+│ ├── affine.py # Affine : E(x) = (ax+b) mod 26
+│ ├── hill.py # Hill 2×2 / 3×3 + attaque clair connu
+│ ├── playfair.py # Playfair : grille 5×5
+│ ├── Otp.py # OTP Vernam : XOR + crib dragging
+│ │
+│ ├── ── TP2 : Cryptographie Symétrique ──
+│ ├── rc4.py # RC4 : KSA + PRGA + vulnérabilité WEP
+│ ├── des.py # DES-ECB/CBC + 3DES + benchmark
+│ ├── aes.py # AES-128/192/256 : ECB/CBC/CTR + avalanche
+│ ├── twofish.py # Twofish (finaliste NIST — 2e)
+│ ├── serpent.py # Serpent (finaliste NIST — 4e)
+│ ├── rc6.py # RC6 (finaliste NIST)
+│ ├── mars.py # MARS (finaliste NIST — IBM)
+│ │
+│ ├── ── TP3 : Cryptographie Asymétrique ──
+│ ├── rsa.py # RSA-512/1024/2048 + OAEP + hybride AES
+│ ├── Dh.py # Diffie-Hellman + MITM + contre-mesure ECDSA
+│ ├── ecc.py # ECC y²=x³+7 + ECDH P-256 + ECIES
+│ ├── elgamal.py # ElGamal + non-déterminisme + malléabilité
+│ │
+│ ├── ── TP4 : Fonctions de Hachage ──
+│ ├── md5.py # MD5 : avalanche + biais
+│ ├── sha256.py # SHA-256 from scratch + validation hashlib
+│ ├── sha512.py # SHA-512 + benchmark MD5/SHA2/SHA3
+│ │
+│ ├── ── TP5 : Signatures Numériques ──
+│ ├── rsa_signature.py # RSA-PSS / PKCS#1 v1.5 + attaques
+│ ├── elgamal_signature.py # Signature ElGamal + attaque nonce
+│ └── dsa_ecdsa.py # DSA + ECDSA + Ed25519 + attaque nonce réutilisé
+│
+└── ── TP6 : Communications Sécurisées ──
+└── secure_chat.py # Application chat sécurisé multi-protocole
 ```
 
 ---
@@ -68,8 +73,12 @@ CRYPTO_EDUCATIONAL_APP/
 ### Dépendances
 
 ```bash
-pip install customtkinter cryptography pycryptodome sympy numpy pillow
+pip install customtkinter cryptography pycryptodome sympy numpy pillow bleak qrcode
 ```
+
+Pour Linux/WSL (Bluetooth RFCOMM) :
+sudo apt install bluetooth libbluetooth-dev
+pip install pybluez
 
 | Package | Utilisation |
 |---|---|
@@ -79,11 +88,17 @@ pip install customtkinter cryptography pycryptodome sympy numpy pillow
 | `sympy` | Génération de grands nombres premiers (RSA) |
 | `numpy` | Opérations matricielles (AES, visualisation) |
 | `pillow` | Démonstration ECB sur images |
+| `bleak`	| Bluetooth LE (Windows/macOS/Linux moderne)|
+| `qrcode`	| Génération QR codes pour échange de clés| 
+| `pybluez`|	Bluetooth RFCOMM (Linux/WSL uniquement)| 
+
 
 ### Lancement
 
 ```bash
 python main.py
+python secure_chat.py
+
 ```
 
 ---
@@ -149,7 +164,27 @@ L'application se compose de :
 | **ElGamal Signature** | Texte libre | Signature + attaque nonce réutilisé |
 | **DSA / ECDSA** | Texte libre | DSA from scratch + ECDSA P-256/P-384 + Ed25519 + attaque nonce |
 
+### TP6 — Communications Sécurisées
+| Protocole	| Fonctionnalités| 
+|---|---|---|
+| TCP/IP + SSL/TLS| 	Serveur SSL avec certificats auto-signés, chiffrement AES-256| 
+| Bluetooth RFCOMM| 	Découverte et connexion RFCOMM (Linux/WSL via PyBluez)| 
+| Bluetooth BLE| 	Découverte BLE moderne (Windows via Bleak)| 
+| UDP/Wi-Fi| 	Chat UDP chiffré avec maintien de présence (ping)| 
+| Vote Homomorphique| 	Paillier - addition de votes chiffrés, dépouillement sans déchiffrement individuel| 
+
 ---
+
+Sécurité implémentée dans TP6:
+AES-256-CFB — chiffrement symétrique des messages
+
+RSA-2048-OAEP — échange de clés sécurisé
+
+RSA-PSS-SHA256 — signatures numériques
+
+QR Code — échange de clés publiques hors-bandes
+
+Certificats SSL auto-signés — pour les connexions TLS
 
 ## 🧪 Exemples d'utilisation
 
@@ -203,6 +238,13 @@ Clé    : avalanche
 - **MD5, RC4, DES** sont présentés avec leurs vulnérabilités connues pour illustration.
 - Les algorithmes asymétriques (RSA, ElGamal) utilisent des clés de taille réduite par défaut pour la démonstration — augmenter la taille pour un usage réel.
 - `winsound` (bips sonores) fonctionne uniquement sur Windows. L'application reste pleinement fonctionnelle sans son sur Linux/macOS.
+- Bluetooth TP6:
+
+Sur Windows: utilisez bleak (BLE moderne)
+
+Sur Linux/WSL: utilisez pybluez (RFCOMM)
+
+Sur macOS: bleak est recommandé
 
 ---
 

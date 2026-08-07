@@ -1,1 +1,9 @@
 customtkinter==5.2.1
+cryptography==42.0.5
+pycryptodome==3.20.0
+sympy==1.12
+numpy==1.26.4
+pillow==10.2.0
+bleak==0.21.1
+qrcode==7.4.2
+pybluez==0.23  # Linux/WSL only - requires libbluetooth-dev
